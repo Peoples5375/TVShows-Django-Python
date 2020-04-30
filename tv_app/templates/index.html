@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper" class="container">
+        <div id="all_the_shows">
+            <h1>All Shows</h1>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <td>ID</td>
+                    <td>Title</td>
+                    <td>Network</td>
+                    <td>Release Date</td>
+                    <td>Actions</td>
+                </thead>
+                <tbody>
+                    {% for show in allshows%}
+                    <tr>
+                        <td>{{show.id}}</td>
+                        <td>{{show.title}}</td>
+                        <td>{{show.network}}</td>
+                        <td>{{show.release_date}}</td>
+                        <td><a href="/shows2/{{show.id}}">Show</a>|<a href="/edit/{{show.id}}">Edit</a>|<a href="/delete_show_on_list/{{show.id}}/destroy">Delete</a></td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+            <a class="btn btn-success text-white" roll=button href="/new">Add a New Show</a>
+        </div>
+    </div>
+    
+</body>
+</html>
